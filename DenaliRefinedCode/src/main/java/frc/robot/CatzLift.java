@@ -51,6 +51,9 @@ public class CatzLift {
 	
 	public static DigitalInput lifterLimitTop;
 	public static DigitalInput lifterLimitBot;
+
+	public final int LIFTER_LIMIT_TOP_PWM_PORT = 6;
+	public final int LIFTER_LIMIT_BOT_PWM_PORT = 7;
 	
 	/******************************************************************************************************************
 	 * Encoder
@@ -65,6 +68,14 @@ public class CatzLift {
 	public static Spark lifterRTLT;
 	public static Spark lifterLTRT;
 	public static Spark lifterLTLT;
+
+	public final int LIFT_RIGHT_RIGHT_PWM_PORT= 4;
+	public final int LIFT_RIGHT_LEFT_PWM_PORT = 9;
+	public final int LIFT_LEFT_RIGHT_PWM_PORT = 7;
+	public final int LIFT_LEFT_LFTT_PWM_PORT = 8;
+
+
+
 
 	/******************************************************************************************************************
 	 * Controller Grouping
@@ -84,13 +95,13 @@ public class CatzLift {
 	public CatzLift() 
 	{
 
-		lifterLimitTop = new DigitalInput(6);
-		lifterLimitBot = new DigitalInput(6);
+		lifterLimitTop = new DigitalInput(LIFTER_LIMIT_TOP_PWM_PORT);
+		lifterLimitBot = new DigitalInput(LIFTER_LIMIT_BOT_PWM_PORT);
 		
-		lifterRTRT = new Spark(4);
-		lifterRTLT = new Spark(9);
-		lifterLTRT = new Spark(7);
-		lifterLTLT = new Spark(8);
+		lifterRTRT = new Spark(LIFT_RIGHT_RIGHT_PWM_PORT);
+		lifterRTLT = new Spark(LIFT_RIGHT_LEFT_PWM_PORT);
+		lifterLTRT = new Spark(LIFT_LEFT_RIGHT_PWM_PORT);
+		lifterLTLT = new Spark(LIFT_RIGHT_LEFT_PWM_PORT);
 
 		threadComplete    = false;
 		liftThreadRunning = false;

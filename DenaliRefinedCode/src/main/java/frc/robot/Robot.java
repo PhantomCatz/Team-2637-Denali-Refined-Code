@@ -37,15 +37,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopPeriodic() {
-		//Put this in arcadeDrive parameter if you want trigger method 
-		//xbox.getTriggerAxis(Hand.kRight) - xbox.getTriggerAxis(Hand.kLeft), xbox.getX(Hand.kLeft)
-		/*
-		if(xbox.getAButton()) {
-			driveTrain.setHighGear();
-		}
-		if(xbox.getBButton()) {
-			driveTrain.setLowGear();
-		}*/
+		CatzTeleopPeriodic.runTeleopPeriodic();
 	}
 	
 	@Override
